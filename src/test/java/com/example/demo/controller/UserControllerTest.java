@@ -71,7 +71,7 @@ public class UserControllerTest {
             get("/api/users/2/verify")
                 .queryParam("certificationCode", "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaab"))
             .andExpect(status().isFound());
-        UserEntity userEntity = userRepository.findById(1L).get();
+        UserEntity userEntity = userRepository.findById(2L).get();
         assertThat(userEntity.getStatus()).isEqualTo(UserStatus.ACTIVE);
     }
 
